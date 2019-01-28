@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="reward_points" sortOrder="999" translate="label">
+			<label>reward points</label>
+		</tab>
+		<section id="earn" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Earn</label>
+			<tab>reward_points</tab>
+			<resource>Magikkart_RedeemPoint::config_magikkart_redeempoint</resource>
+			<group id="points_signup_with_referral_code" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label">
+				<label>Points Signup With Referral Code</label>
+				<comment>Define the points that the referring user will earn, when the referred user will signup.</comment>
+				<field id="reward_point" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Reward point</label>
+					 <validate>required-entry validate-number</validate>
+				</field>
+				<field id="maximum_number_of_uses" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>Maximum Number of Uses</label>
+					<comment>(Leave blank for unlimited) </comment>
+					 <validate>validate-number</validate>
+				</field>
+				<field id="expiration_date" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label" type="text">
+					<label>Expiration Date</label>
+					<frontend_model>Magikkart\RedeemPoint\Block\DatePicker</frontend_model>
+					<comment>(Leave blank for not to expire)</comment>
+				</field>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="select">
+					<label>Active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="points_to_referring_user" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label">
+				<label>Points to referring user</label>
+				<comment>Define the points that the referring user will earn, when the referred user will signup.</comment>
+				<field id="reward_point" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Reward point</label>
+					<validate>required-entry validate-number</validate>
+					<comment/>
+				</field>
+				<field id="maximum_number_of_uses" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>Maximum Number of Uses</label>
+					<validate>validate-number</validate>
+					<comment>(Leave blank for unlimited) </comment>
+				</field>
+				<field id="expiration_date" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label" type="text">
+					<label>Expiration Date</label>
+					<frontend_model>Magikkart\RedeemPoint\Block\DatePicker</frontend_model>
+					<comment>(Leave blank for not to expire)</comment>
+				</field>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="select">
+					<label>Active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="points_signup_without_referral_code" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label">
+				<label>Points Signup Without Referral Code</label>
+				<field id="reward_point" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label" type="text">
+					<label>Reward point</label>
+					<validate>required-entry validate-number</validate>
+					<comment/>
+				</field>
+				<field id="maximum_number_of_uses" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label" type="text">
+					<label>Maximum Number of Uses</label>
+					<validate>validate-number</validate>
+					<comment>(Leave blank for unlimited) </comment>
+				</field>
+				<field id="expiration_date" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label" type="text">
+					<label>Expiration Date</label>
+					<frontend_model>Magikkart\RedeemPoint\Block\DatePicker</frontend_model>
+					<comment>(Leave blank for not to expire)</comment>
+				</field>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label" type="select">
+					<label>Active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="pointorder" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="4" translate="label">
+				 <label>Points based on order number</label>
+				 <field id="ordernumberpoints" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Magikkart\RedeemPoint\Block\Ordernumberpoints</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field> 
+			</group>
+			<group id="pointammount" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label">
+				 <label>Points based on order amount</label>
+				 <field id="orderamountpoints" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Magikkart\RedeemPoint\Block\Orderamountpoints</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field> 
+			</group>
+		</section>
+		<section id="redeem" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Redeem</label>
+			<tab>reward_points</tab>
+			<resource>Magikkart_RedeemPoint::config_magikkart_redeempoint</resource>
+			<group id="by_percentage_of_reward_points" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1" translate="label">
+				<label>Redeem points - By percentage of reward points</label>
+				<field id="reward_points_weightage_wrt" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Reward Points Weightage wrt. Curency (percentage)</label>
+					<validate>required-entry validate-number validate-digits-range digits-range-0-100</validate>
+					<comment/>
+				</field>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="minimum_order_limit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="2" translate="label">
+				<label>Redeem points - Minimum order limit</label>
+				<field id="minimum_order_limit" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Minimum Order Limit (INR)</label>
+					<validate>required-entry validate-number validate-digits-range digits-range-1-100000</validate>
+					<comment/>
+				</field>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="maximum_redemption" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="3" translate="label">
+				<label>Maximum redemption (percentage of order amount)</label>
+				<field id="maximum_redemption_percentage" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Maximum Redemption Amount</label>
+					<validate>required-entry validate-number validate-digits-range digits-range-0-100</validate>
+					<comment/>
+				</field>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
+

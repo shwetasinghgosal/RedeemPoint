@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<earn>
+			<points_signup_with_referral_code>
+				<reward_point/>
+				<maximum_number_of_uses/>
+				<expiration_date/>
+			</points_signup_with_referral_code>
+			<points_to_referring_user>
+				<reward_point/>
+				<maximum_number_of_uses/>
+				<expiration_date/>
+				<active/>
+			</points_to_referring_user>
+			<points_signup_without_referral_code>
+				<reward_point/>
+				<maximum_number_of_uses/>
+				<expiration_date/>
+				<active/>
+			</points_signup_without_referral_code>
+		</earn>
+		<redeem>
+			<by_percentage_of_reward_points>
+				<reward_points_weightage_wrt/>
+				<active/>
+			</by_percentage_of_reward_points>
+			<minimum_order_limit>
+				<minimum_order_limit/>
+				<active/>
+			</minimum_order_limit>
+			<maximum_redemption>
+				<maximum_redemption_percentage/>
+				<active/>
+			</maximum_redemption>
+		</redeem>
+	</default>
+</config>
